@@ -1,5 +1,6 @@
 version: 2
 
+
 models:
   - name: employee
     description: "DBT Model for employee table"
@@ -15,17 +16,23 @@ models:
       - name: emp_salary
         tests:
           - value_check
-  - name : customer
-    description: "DBT MODEL FOR CUSTOMER TABLE"
-  - name : customer_vw
-    description: "DBT MODEL FOR CUSTOMER VIEW"
-  - name : sales
-    description: "DBT MODEL FOR SALES TABLE"
+  - name: customer
+    description: "DBT Model for the customer table"
+  - name: customer_vw
+    description: "DBT model for the customer view"
+  - name: sales
+    description: :DBT Model for the sales table"
   - name: product
-    description: "DBT MODEL FOR PRODUCT TABLE"
-  - name: purchases
-    description: "DBT MODEL FOR purchases TABLE"
+    description: "DBT Model for the product table"
+  - name: purchase
+    description: "DBT Model for the purchase table"
+  - name: clean_orders
+    description: "DBT Model for the clean Orders"
+  - name: final_order
+    description: "DBT Model for the final orders"
+  - name: session
 
+   
 sources:
   - name: employee
     database: DBT_DB
@@ -36,19 +43,34 @@ sources:
     database: DBT_DB
     schema: PUBLIC
     tables:
-      - name: CUSTOMER_SRC 
+      - name: CUSTOMER_SRC
   - name: sales
     database: DBT_DB
     schema: PUBLIC
-    tables: 
+    tables:
       - name: SALES_SRC
   - name: product
     database: DBT_DB
     schema: PUBLIC
     tables:
-      - name: PRODUCT_SRC 
+      - name: PRODUCT_SRC
   - name: purchases
     database: DBT_DB
     schema: PUBLIC
     tables:
       - name: PURCHASE_SRC
+  - name: orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: BASE_ORDERS
+  - name: patient
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
+  - name: session
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SESSION_SRC
