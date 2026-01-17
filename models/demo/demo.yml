@@ -23,6 +23,8 @@ models:
     description: "DBT MODEL FOR SALES TABLE"
   - name: product
     description: "DBT MODEL FOR PRODUCT TABLE"
+  - name: purchases
+    description: "DBT MODEL FOR purchases TABLE"
 
 sources:
   - name: employee
@@ -45,3 +47,8 @@ sources:
     schema: PUBLIC
     tables:
       - name: PRODUCT_SRC 
+  - name: purchases
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PURCHASE_SRC
